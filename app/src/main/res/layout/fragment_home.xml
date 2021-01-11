@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/row1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:gravity="center_vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <EditText
+                android:id="@+id/searchinput"
+                android:imeOptions="actionSearch"
+                android:inputType="textPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:hint="Search..." />
+
+            <ImageButton
+                android:id="@+id/clearSearchInput"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:scaleType="fitCenter"
+                android:layout_marginRight="5dp"
+                android:alpha="0.4"
+                android:layout_gravity="end|center_vertical"
+                android:background="@drawable/ic_clear" />
+
+        </FrameLayout>
+
+        <ImageButton
+            android:id="@+id/searchbutton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_search"
+            android:layout_weight="0"
+            android:scaleType="fitCenter"
+            style="?android:attr/borderlessButtonStyle"
+            android:contentDescription="Search"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+        <Spinner
+            android:id="@+id/spinnercategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Season: " />
+
+        <Spinner
+            android:id="@+id/spinnerseason"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Episode: "
+            android:textAlignment="center"/>
+
+        <Spinner
+            android:id="@+id/spinnerepisode"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp" />
+
+    <LinearLayout
+        android:id="@+id/row3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/torrent-1337x"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/torrent_1337x"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:id="@+id/opensubtitles"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/opensubtitles"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/separator2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+    <LinearLayout
+        android:id="@+id/row4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/customURL"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Custom Magnet URL..."
+            android:gravity="start"
+            android:lines="1"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/addCustomButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_add"
+            android:scaleType="fitCenter"
+            style="?android:attr/borderlessButtonStyle"
+            android:contentDescription="Add Custom URL" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/separator3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/recentView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numColumns="3"
+            android:verticalSpacing="10dp"
+            android:horizontalSpacing="0dp"
+            android:stretchMode="columnWidth"
+            android:gravity="center_horizontal" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/emptyElement"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Recents"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="Hint: press and hold a recent item to remove it"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        </android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="75dp" />
+
+</LinearLayout>

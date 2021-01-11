@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:title="Clear Recents" android:id="@+id/clearRecents" />
+    <item android:title="Edit Host" android:id="@+id/hostChange" />
+    <item android:title="Edit Port" android:id="@+id/portChange" />/>
+</menu>
